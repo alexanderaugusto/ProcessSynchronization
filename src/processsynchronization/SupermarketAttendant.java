@@ -5,7 +5,10 @@
  */
 package processsynchronization;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import view.Result;
 
 /**
  *
@@ -13,43 +16,44 @@ import java.util.ArrayList;
  */
 public class SupermarketAttendant {
 
-    public void attendant1(ArrayList<Product> products) {
+    public void attendant1(ArrayList<Product> products, Result resultScreen) {
         float total = 0;
-        
+
         for (Product product : products) {
-            System.out.print("Atendendo o cliente " + Thread.currentThread().getName() + ": ");
-            System.out.println(product.getName());
+            resultScreen.resultListModel.addElement("Atendendo o cliente " + Thread.currentThread().getName() + ": " + product.getName());
 
             total = total + product.getPrice();
-            
+
             try {
-                Thread.sleep(500);
+                Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 System.out.println(ex);
             }
         }
-        
-        System.out.println("Total da compra: " + total);
-        System.out.println("");
+
+        DecimalFormat df2 = new DecimalFormat("#.##");
+        df2.setRoundingMode(RoundingMode.DOWN);
+        resultScreen.resultListModel.addElement("Total da compra do cliente " + Thread.currentThread().getName() + ": R$ " + df2.format(total));
     }
 
-    public synchronized void attendant2(ArrayList<Product> products) {
+    public synchronized void attendant2(ArrayList<Product> products, Result resultScreen) {
         float total = 0;
-        
+
         for (Product product : products) {
-            System.out.print("Atendendo o cliente " + Thread.currentThread().getName() + ": ");
-            System.out.println(product.getName());
+            resultScreen.resultListModel.addElement("Atendendo o cliente " + Thread.currentThread().getName() + ": " + product.getName());
 
             total = total + product.getPrice();
-            
+
             try {
-                Thread.sleep(500);
+                Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 System.out.println(ex);
             }
         }
-        
-        System.out.println("Total da compra: " + total);
-        System.out.println("");
+
+        DecimalFormat df2 = new DecimalFormat("#.##");
+        df2.setRoundingMode(RoundingMode.DOWN);
+        resultScreen.resultListModel.addElement("Total da compra do cliente " + Thread.currentThread().getName() + ": R$ " + df2.format(total));
+        resultScreen.resultListModel.addElement("****************************************************************");
     }
 }

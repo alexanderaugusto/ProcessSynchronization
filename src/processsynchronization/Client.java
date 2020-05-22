@@ -6,19 +6,25 @@
 package processsynchronization;
 
 import java.util.ArrayList;
+import view.Result;
 
 /**
  *
  * @author Alexa
  */
 public class Client implements Runnable {
+
     private String name;
     private ArrayList<Product> products = new ArrayList<Product>();
-    
+
     private static SupermarketAttendant attendant = new SupermarketAttendant();
+
+    public int attendantType;
+    public Result resultScreen;
     
-    public Client(String name){
+    public Client(String name, ArrayList<Product> products) {
         this.name = name;
+        this.products = products;
     }
 
     public String getName() {
@@ -28,13 +34,13 @@ public class Client implements Runnable {
     public void setName(String name) {
         this.name = name;
     }
-    
-    public void addProduct(Product product){
-        this.products.add(product);
-    }
 
     @Override
     public void run() {
-        attendant.attendant1(products);
+        if (attendantType == 1) {
+            attendant.attendant1(products, resultScreen);
+        }else{
+            attendant.attendant2(products, resultScreen);
+        }
     }
 }

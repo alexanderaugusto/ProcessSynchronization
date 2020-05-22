@@ -12,10 +12,20 @@ package processsynchronization;
 public class Product {
     private String name;
     private float price;
+    private String icon;
     
-    public Product(String name, float price){
+    public Product(String name, float price, String icon){
         this.name = name;
         this.price = price;
+        this.icon = icon;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     public String getName() {
