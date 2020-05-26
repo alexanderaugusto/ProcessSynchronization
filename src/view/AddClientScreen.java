@@ -22,9 +22,9 @@ import processsynchronization.Product;
  *
  * @author Alexa
  */
-public class AddClient extends javax.swing.JInternalFrame {
+public class AddClientScreen extends javax.swing.JInternalFrame {
 
-    Home homeScreen;
+    HomeScreen homeScreen;
 
     private List<ProductScreen> products = new ArrayList<ProductScreen>();
     private JPanel productsPanel = new JPanel();
@@ -37,7 +37,7 @@ public class AddClient extends javax.swing.JInternalFrame {
     /**
      * Creates new form AddClient
      */
-    public AddClient(Home homeScreen) {
+    public AddClientScreen(HomeScreen homeScreen) {
         initComponents();
 
         this.homeScreen = homeScreen;
@@ -92,7 +92,7 @@ public class AddClient extends javax.swing.JInternalFrame {
         if (input == 0) {
             this.clientLabel.setText("Client " + (this.homeScreen.clients.size() + 1));
         } else {
-            this.homeScreen.changeScreen(new Attendants(this.homeScreen));
+            this.homeScreen.changeScreen(new AttendantScreen(this.homeScreen));
         }
     }
 

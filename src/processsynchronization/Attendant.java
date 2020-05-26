@@ -8,15 +8,16 @@ package processsynchronization;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import view.Result;
+import view.ResultScreen;
 
 /**
  *
  * @author Alexa
  */
-public class SupermarketAttendant {
+public class Attendant {
 
-    public void attendant1(ArrayList<Product> products, Result resultScreen) {
+    // sem sincronia
+    public void attendant1(ArrayList<Product> products, ResultScreen resultScreen) {
         float total = 0;
 
         for (Product product : products) {
@@ -36,7 +37,8 @@ public class SupermarketAttendant {
         resultScreen.resultListModel.addElement("Total da compra do cliente " + Thread.currentThread().getName() + ": R$ " + df2.format(total));
     }
 
-    public synchronized void attendant2(ArrayList<Product> products, Result resultScreen) {
+    // com sincronia
+    public synchronized void attendant2(ArrayList<Product> products, ResultScreen resultScreen) {
         float total = 0;
 
         for (Product product : products) {

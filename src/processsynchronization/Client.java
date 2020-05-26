@@ -6,7 +6,7 @@
 package processsynchronization;
 
 import java.util.ArrayList;
-import view.Result;
+import view.ResultScreen;
 
 /**
  *
@@ -17,10 +17,10 @@ public class Client implements Runnable {
     private String name;
     private ArrayList<Product> products = new ArrayList<Product>();
 
-    private static SupermarketAttendant attendant = new SupermarketAttendant();
+    private static Attendant attendant = new Attendant();
 
     public int attendantType;
-    public Result resultScreen;
+    public ResultScreen resultScreen;
     
     public Client(String name, ArrayList<Product> products) {
         this.name = name;

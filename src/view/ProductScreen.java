@@ -8,7 +8,6 @@ package view;
 import java.io.File;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import processsynchronization.Product;
 
@@ -18,13 +17,13 @@ import processsynchronization.Product;
  */
 public class ProductScreen extends javax.swing.JPanel {
 
-    AddClient addClient;
+    AddClientScreen addClient;
     Product product;
     
     /**
      * Creates new form Pro
      */
-    public ProductScreen(Product product, AddClient addClient) {
+    public ProductScreen(Product product, AddClientScreen addClient) {
         initComponents();
 
         this.addClient = addClient;
@@ -72,7 +71,6 @@ public class ProductScreen extends javax.swing.JPanel {
 
         icon.setBackground(new java.awt.Color(244, 247, 245));
         icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agua.png"))); // NOI18N
 
         name.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         name.setForeground(new java.awt.Color(17, 19, 68));
@@ -82,7 +80,7 @@ public class ProductScreen extends javax.swing.JPanel {
         price.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         price.setForeground(new java.awt.Color(17, 19, 68));
         price.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        price.setText("R$ 20.00");
+        price.setText("R$ ");
 
         javax.swing.GroupLayout itemLayout = new javax.swing.GroupLayout(item);
         item.setLayout(itemLayout);

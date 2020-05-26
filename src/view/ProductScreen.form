@@ -89,9 +89,6 @@
               <Color blue="f5" green="f7" red="f4" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/img/agua.png"/>
-            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="name">
@@ -115,7 +112,7 @@
               <Color blue="44" green="13" red="11" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="R$ 20.00"/>
+            <Property name="text" type="java.lang.String" value="R$ "/>
           </Properties>
         </Component>
       </SubComponents>

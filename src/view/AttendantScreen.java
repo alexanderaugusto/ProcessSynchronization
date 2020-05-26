@@ -9,14 +9,14 @@ package view;
  *
  * @author Alexa
  */
-public class Attendants extends javax.swing.JInternalFrame {
-    public Home homeScreen;
+public class AttendantScreen extends javax.swing.JInternalFrame {
+    public HomeScreen homeScreen;
     public int attendantSelected = -1;
     
     /**
      * Creates new form Attendants
      */
-    public Attendants(Home homeScreen) {
+    public AttendantScreen(HomeScreen homeScreen) {
         initComponents();
         
         this.homeScreen = homeScreen;
@@ -218,7 +218,7 @@ public class Attendants extends javax.swing.JInternalFrame {
 
     private void startAttendanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startAttendanceMouseClicked
         if(this.attendantSelected != -1)
-            new Result(this).setVisible(true);
+            new ResultScreen(this).setVisible(true);
     }//GEN-LAST:event_startAttendanceMouseClicked
 
     private void attendant1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attendant1MouseClicked
